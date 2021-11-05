@@ -9,7 +9,10 @@ const getRandomHexColor = () =>
 
 const createBoxes = (amount) => {
   const boxes = [];
-  let initiaBoxSize = 20;
+  let initiaBoxSize =
+    boxContainer.children.length === 0
+      ? 20
+      : boxContainer.lastChild.clientWidth;
 
   for (let i = 0; i < amount; i++) {
     initiaBoxSize += 10;

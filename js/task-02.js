@@ -10,16 +10,14 @@ const ingredients = [
 const ingredientsListRef = document.querySelector("#ingredients");
 
 const addIngredientsToList = (ingredients, list) => {
-  const ingredientsList = [];
-
-  ingredients.forEach((el) => {
-    const ingredient = document.createElement("li");
-    ingredient.innerText = el;
-    ingredient.classList.add("item");
-    ingredientsList.push(ingredient);
-  });
-
-  list.append(...ingredientsList);
+  list.append(
+    ...ingredients.map((el) => {
+      const ingredient = document.createElement("li");
+      ingredient.innerText = el;
+      ingredient.classList.add("item");
+      return ingredient;
+    })
+  );
 };
 
 addIngredientsToList(ingredients, ingredientsListRef);
