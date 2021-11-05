@@ -1,11 +1,5 @@
 const categoriesRef = document.querySelector("#categories");
-
 const categoriesItemRef = categoriesRef.querySelectorAll(".item");
-
-console.log;
-categoriesItemRef.forEach(() => {
-  console.log();
-});
 
 const printCategories = (items) => {
   console.log(`Number of categories: ${items.length}`);

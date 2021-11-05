@@ -4,16 +4,15 @@ const counterBtnIncrement = document.querySelector("[data-action=increment]");
 
 let counterValue = 0;
 
+const updateCounterValue = (dataAtr) => {
+  dataAtr.dataset.action === "decrement" ? counterValue-- : counterValue++;
+  counterValueRef.innerHTML = counterValue;
+};
+
 counterBtnIncrement.addEventListener("click", (e) => {
-  counterValue += 1;
-  updateValue();
+  updateCounterValue(counterBtnIncrement);
 });
 
 counterBtnDecrement.addEventListener("click", (e) => {
-  counterValue -= 1;
-  updateValue();
+  updateCounterValue(counterBtnDecrement);
 });
-
-const updateValue = () => {
-  counterValueRef.innerHTML = counterValue;
-};
